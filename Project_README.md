@@ -5,7 +5,7 @@
 + 安装koa框架生态环境
 
   ```javascript
-  npm install -g koa-generator	/*将koa框架生态
+  npm install -g koa-generator	/*将koa框架生态*/
   /*a安装完成后，命令行面板会有koa和koa2两个指令
   koa  1.0版本
   koa2 为2.0版本*/
@@ -41,5 +41,3 @@
   2021-07-13  11:20    <DIR>          routes					#路由目录
   2021-07-13  11:20    <DIR>          views					#存放ejs模板引擎文件
   ```
-
-  
