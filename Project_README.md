@@ -41,3 +41,14 @@
   2021-07-13  11:20    <DIR>          routes					#路由目录
   2021-07-13  11:20    <DIR>          views					#存放ejs模板引擎文件
   ```
+
+## 二、将项目部署到git仓库
+
+```
+git init				#初始化git仓库
+git add .				#添加所有文件到临时仓库
+git remote add origin https://github.com/molincheng/koa2-weibo-code.git		#添加远程仓库地址
+git push origin master				#把临时仓库的文件推到线上仓库的主分支上
+git pull origin master				#将线上仓库的主分支拉到本地仓库中
+```
+
