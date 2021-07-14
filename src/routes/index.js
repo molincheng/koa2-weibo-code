@@ -16,4 +16,23 @@ router.get('/json', async (ctx, next) => {
   }
 })
 
+// 获取用户页面信息
+router.get('/profile/:userName',async (ctx,next)=>{
+	const {userName} = ctx.params
+	ctx.body = {
+		title:"this is profile page",
+		userName
+	}
+})
+
+// 加载用户更多信息路由api
+router.get('/loadMore/:userName/:pageIndex',async (ctx,next)=>{
+	const {userName,pageIndex} = ctx.params
+	ctx.body = {
+		title:"this is loadmore API",
+		userName,pageIndex
+	}
+
+})
+
 module.exports = router
