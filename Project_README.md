@@ -52,3 +52,43 @@ git push origin master				#把临时仓库的文件推到线上仓库的主分�
 git pull origin master				#将线上仓库的主分支拉到本地仓库中
 ```
 
+# 创建koa2_weibo_db数据库
+
+### 创建users、blogs表
+
+```mysql
+--users table--
+create table users(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(45) NOT NULL,
+    'password' VARCHAR(45) NOT NULL,
+    nickname VARCHAR(45) NOT NULL
+);
+
+--blogs table--
+create table blogs(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(45) NOT NULL,
+    content TEXT NOT NULL,
+    userid INT NOT NULL
+);
+```
+
+### 创建blogs表的外键并级联
+
+```MYSQL
+ALTER TABLE blogs
+ADD FOREIGN KEY(userid)			--添加外键
+REFERENCES users(id)			--关联表
+ON DELETE CASCADE				--级联删除
+ON UPDATE CASCADE;				--级联更新
+```
+
+### 删除blogs表的外键
+
+```mysql
+ALTER TABLE blogs
+DROP FOREIGN KEY
+`表的外键名`;
+```
+
