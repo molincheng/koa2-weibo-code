@@ -52,6 +52,67 @@ git push origin master				#把临时仓库的文件推到线上仓库的主分�
 git pull origin master				#将线上仓库的主分支拉到本地仓库中
 ```
 
+## 三、eslint 和 pre-commit模块包使用（代码规范和代码提交规范检测）
+
+### eslint——用于开发中编写代码规范的检测工具
+
++ .eslintignore —— 用来配置需要过滤的文件或文件夹
+
+  ```
+  node_modules
+  test
+  src/public
+  ```
+
++ .eslintrc.json —— 用来配置代码规范的规则
+
+  ```json
+  {
+  	"parser":"babel-eslint",
+  	"env":{
+  		"es6":true,
+  		"commonjs":true,
+  		"node":true
+  	},
+  	"rules":{
+  		"indent":["error",4],
+  		"quotes":[
+  			"error",
+  			"single",
+  			{
+  				"allowTemplateLiterals":true
+  			}
+  		],
+  		"semi":[
+  			"error",
+  			"never"
+  		]
+  	}
+  }
+  ```
+
++ package.json
+
+```json
+ "scripts": {
+        "lint": "eslint --ext .js ./src"
+    }
+```
+
+
+
+### pre-commit —— 当对代码进行git提交时,进行代码规范检测，如不规范则无法提交
+
+```json
+npm i pre-commit --save-dev
+
+package.json
+"pre-commit": [
+        "lint"
+    ]
+
+```
+
 # 创建koa2_weibo_db数据库
 
 ### 创建users、blogs表
